@@ -38,14 +38,16 @@ transition: transform .2s;
     width: 200px;
 }
 .giaithuong>.img-gt1{
+    width: 100%;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
 }
 .giaithuong>.img-gt2{
+    width: 100%;
     padding-top: 10px;
     align-items: center;
-    border-bottom-right-radius: 30px;
-    border-top-left-radius: 30px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 .giaithuong>.img-gt2:hover{
     opacity: 0.9;
@@ -64,6 +66,7 @@ transition: transform .2s;
     -webkit-background-clip: text;
     color: transparent;
 }
+
 .giaithuong>.boxtextgiaithuong>.text-giaithuong:hover{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: linear-gradient(to right, #e6a76d70 , #f57004);
@@ -142,6 +145,9 @@ transition: transform .2s;
 .item-hoatdong>img{
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+}
+.item-hoatdong:hover>img{
+    opacity: 0.8;
 }
 .col>.item-hoatdong>a{
     padding: 10px;
@@ -359,11 +365,14 @@ h1 {
   .accordion>hr {
     width: 100;
     margin-left: 0;
-    border: 1px solid grey ;
+    border: 1px solid #B5551C;
+    box-shadow: 0 4px 3px burlywood;
+    border-radius: 1px;
   }
   
   .accordion .container.active .content {
-    height: 150px;
+    height: 180px;
+    font-weight: 200;
   }
    .accordion .container.active .content a{
     text-decoration: none;
@@ -375,4 +384,21 @@ h1 {
     content: '-';
     font-size: 30px;
   }
-  
+
+.row>.col>.dangky-mobile>.label{
+    font-size: 30px;
+    font-weight: bolder;
+}  
+.row>.col>.dangky-mobile>.content>a{
+    text-decoration: none;
+    color: black;
+}
+.row>.col>.dangky-mobile{
+    text-align: center;
+}
+.accordion-body>.accordion>.container>.content>p{
+    color: #8b4b16;
+}
+.item-doanhnghiep>img{
+    width: 100%;
+}
