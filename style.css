@@ -8,6 +8,208 @@
 html{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+
+body::-webkit-scrollbar {
+    display: none; /* cho Chrome, Safari, and Opera */
+  }
+  /* .col {
+    text-align: center;
+    background-color: white;
+    background-clip: content-box;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width:fit-content;
+  } */
+  .container-header{
+    position:fixed;
+    top : 0;
+    left:0;
+    right:0;
+    z-index: 10000;
+  }
+  .container-header ul{
+    display:inline-flex;
+    list-style: none; 
+
+  }
+
+  .container-header ul>li{
+    margin-right:20px;
+  }
+
+  .container-header a{
+    text-decoration: none;
+    color:black;
+  }
+
+  
+  .container-teacher{
+    height:fit-content;
+    width:fit-content ;
+    background-color: white;
+    border-radius: 10px;
+
+ }
+ .teacher-box{
+  height:fit-content;
+  width:fit-content;
+  margin:0 auto;
+  background-image:linear-gradient(orangered,white,rgba(0,0,0,0.1));
+  border-radius: 100px;
+  box-shadow: 0 0 10px orangered;
+  align-items: center;
+ }
+ .teacher-job{
+  background-image:linear-gradient(to right,orange,rgba(255, 166, 0, 0.871),#fff);
+  padding:5px;
+  width:fit-content;
+  border-radius: 10px;
+  margin:0 auto;
+ }
+ .teacher-name{
+  height:150px;
+  width:100%;
+  background-color: white;
+  box-shadow: 0 0 10px orangered;
+  border-radius: 10px 10px 100px 100px;
+  padding-top:50px ;
+  margin-bottom:30px;
+ }
+ .teacher-photo img{
+  border-radius: 150px;
+ }
+
+ /* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom:50px;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: gray;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+
+
+
+
+
 .col {
     background-clip: content-box;
     margin-top: 8px;
@@ -217,7 +419,7 @@ transition: transform .2s;
     font-weight: bold;
     }
 .buttondangky:active{
-    box-shadow: 0 5px #383838;
+    /* box-shadow: 0 5px #383838; */
     transform: translateY(4px);
 }
 
@@ -329,7 +531,7 @@ h1 {
     padding: 20px 20px;
   }
   
-  .accordion .container {
+  .accordion .container-sub {
     position: relative;
     margin: 10px 10px;
   }
@@ -352,7 +554,7 @@ h1 {
     transform: translateY(-50%);
   }
   
-  .accordion .content {
+  .accordion .content-mobile-footer {
     position: relative;
     background: white;
     height: 0;
@@ -370,17 +572,17 @@ h1 {
     border-radius: 1px;
   }
   
-  .accordion .container.active .content {
-    height: 180px;
+  .accordion .container-sub.active .content-mobile-footer {
+    height: 200px;
     font-weight: 200;
   }
-   .accordion .container.active .content a{
+   .accordion .container-sub.active .content-mobile-footer a{
     text-decoration: none;
    }
-   .accordion .container.active .content .dangky{
+   .accordion .container-sub.active .content-mobile-footer .dangky{
     margin: 0px;
    }
-  .accordion .container.active .label::before {
+  .accordion .container-sub.active .label::before {
     content: '-';
     font-size: 30px;
   }
@@ -389,14 +591,14 @@ h1 {
     font-size: 30px;
     font-weight: bolder;
 }  
-.row>.col>.dangky-mobile>.content>a{
+.row>.col>.dangky-mobile>.content-mobile-footer>a{
     text-decoration: none;
     color: black;
 }
 .row>.col>.dangky-mobile{
     text-align: center;
 }
-.accordion-body>.accordion>.container>.content>p{
+.accordion-body>.accordion>.container-sub>.content-mobile-footer>p{
     color: #8b4b16;
 }
 .item-doanhnghiep>img{
