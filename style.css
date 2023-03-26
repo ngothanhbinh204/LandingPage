@@ -2,6 +2,7 @@
     box-sizing: border-box;
   }
   *body {
+  font-family: 'Roboto', sans-serif;
   background: linear-gradient(30deg,#ddd,#e3e3e3,#bbb);
   background-size: 300% 300%;
   animation: gradient 5s ease infinite;
@@ -20,10 +21,10 @@
 }
   body{
     margin:0px;
-    font-family:Arial, sans-serif ;
     -ms-overflow-style: none; /* cho  Internet Explorer, Edge */
     scrollbar-width: none; /* cho Firefox */
     overflow-y: scroll; 
+    overflow-x: hidden;
   }
   html{
     scroll-behavior: smooth;
@@ -133,8 +134,6 @@
     }
   }
   @media screen and (max-width:600px){
-    
-  
     .container-header{
         font-size: x-small;
         height: 50px !important;;
@@ -217,7 +216,7 @@
   }
   /*--------------------------Mobile menu-----------------*/  
   .mobile-container {
-    position:absolute;
+    position:fixed;
     margin: 0;
     background-color: orangered;
     color: white;
@@ -246,25 +245,25 @@
     text-decoration: none;
     font-size: 17px;
     display: block;
-  
   }
   #myLinks a{
     background:rgba(255,140,0);
     padding:10px 20px;
-    
+    transition: 0.5s;
   }
   .topnav a.icon {
     background: orangered;
     display: block;
     position: absolute;
-    right: 100px;
+    right: 0;
     top: 0;
   }
   
   #myLinks a:hover {
-    background-color: #ddd;
+    background: linear-gradient(to right,#ddd, #ddddddbf);
     color: black;
     font-weight: bold;
+    padding: 10px 40px;
   }
     
   /*----------------------------------SLIDESHOW------------------------*/
@@ -360,7 +359,7 @@
 .container-information p{
   line-height: 30.5px;
   background:none;
-  padding: 0 15px;
+  padding: 5px 15px;
 }
 .infor-news a{
   text-decoration: none;
@@ -392,7 +391,6 @@
 .block2{
   margin:50px 0;
 }
-
 .block2_left span{
   padding:10px 0;
   line-height: 25px;  
@@ -703,7 +701,6 @@ transition: transform .2s;
   font-weight: bolder;
   text-decoration: none;
   color: black;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   transition: transform .2s;
   padding-left: 2%;
 }
